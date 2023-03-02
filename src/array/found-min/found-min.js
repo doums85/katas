@@ -10,27 +10,41 @@ Example:
 
 You can't use the function Math.min()
 
+30 MIN
 */
 
 // TODO add your code here
 
 function min(array) {
-  let minValue = array[0];
-  // Tableau VIDE
-  if (!minValue) {
-    // = UNDEFINED
+  if (!array || array.length === 0) {
     return null;
   }
 
-  for (let i = 0; i <= array.length - 1; i++) {
-    console.log(minValue, array[i]);
-    if (minValue > array[i]) {
-      minValue = array[i];
+  let max = array[0]; // 2
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > max) {
+      max = array[i];
     }
   }
 
-  return minValue;
+  return max;
 }
+
+
+
+/* function min(arr) {
+  if (!arr || arr.length === 0) {
+    return null;
+  }
+  let minValue = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < minValue) {
+      minValue = arr[i];
+    }
+  }
+  return minValue;
+} */
 // [7, 8, 1, -3]
 
 module.exports = min;
